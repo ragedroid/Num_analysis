@@ -1,4 +1,4 @@
-# Num_analysis
+# Numerical Analysis MATLAB
 
 MATLAB implementation for various techniques in the course MATH F313 Numerical Analysis.
 

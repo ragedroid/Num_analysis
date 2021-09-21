@@ -1,7 +1,7 @@
 function [root,n] = fixed_point(a,b,x0,tol,phi,x)
 %eg - directly pass phi as syms x; phi based on choice
 
-    %sanity check for phi
+    %sanity check for phi by derivative
     dphi = diff(phi);
     range = a:1e-2:b;
     max = 0;
@@ -11,8 +11,16 @@ function [root,n] = fixed_point(a,b,x0,tol,phi,x)
         end
     end
     
+    %sanity check for phi by domain
+    flag = 0;
+    for i = range
+        if (subs(phi,x,i) < a) || (subs(phi,x,i) > b)
+            flag = 1;
+        end
+    end
+    
     %iteration
-    if abs(max) < 1
+    if (abs(max) < 1) && (flag == 0)
         xn = x0;
         xn1 = subs(phi,x,x0);
         n = 1;
@@ -25,7 +33,10 @@ function [root,n] = fixed_point(a,b,x0,tol,phi,x)
         root = xn1;
         fprintf('Ans = %.9f after %d iterations with error = %.9f.\n',root,n,abs(xn1-xn));
     
-    else
+    elseif (abs(max) > 1)
         fprintf('|phi''(x)| exceeds 1 on interval. Choose a different function.\n');
+        
+    elseif (flag)
+        fprintf('phi(x) is not contained within interval. Choose a different function.\n');
     end
 end

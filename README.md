@@ -27,7 +27,17 @@ MATLAB implementation for various techniques in the course MATH F313 Numerical A
 
 2. Iterative methods
   + [Fixed-point iteration](https://github.com/ragedroid/Num_analysis/blob/master/Root%20approximation/Iterative/fixed_point.m)
+  
+  <p align="center" width="100%">
+    <img width="50%" src="https://github.com/ragedroid/Num_analysis/blob/master/Utilities/fixed_point.gif">
+  </p>
+  
   + [Newton-Raphson standard](https://github.com/ragedroid/Num_analysis/blob/master/Root%20approximation/Iterative/newton_std.m)
+  
+  <p align="center" width="100%">
+    <img width="50%" src="https://github.com/ragedroid/Num_analysis/blob/master/Utilities/nr.gif">
+  </p>
+  
   + [Newton-Raphson (faster convergence with multiplicity known)](https://github.com/ragedroid/Num_analysis/blob/master/Root%20approximation/Iterative/newton_mod1.m)
   + [Newton-Raphson (faster convergence with multiplicity unknown)](https://github.com/ragedroid/Num_analysis/blob/master/Root%20approximation/Iterative/newton_mod2.m)
   
